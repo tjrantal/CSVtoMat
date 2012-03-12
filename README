@@ -1,5 +1,11 @@
 CSV to mat converter. Used with Octave, since dlmread was taking forever with a csv-file.
 Got the file format from here: http://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf
-It may well be that problem was actually in column heading name, which contained spaces and parentheses.
-Nevertheless, the converter produced octave readable .mat file.
+I have used the converter successfully in producing an Octave readable .mat file.
+The program is very picky and allows exactly one header line, no empty columns and only numbers
+on rows other than the first one.
 
+Compile:
+javac WriteMat.java CSVReader.java
+
+Execute
+java WriteMat fullPathToCSVFile fullPathToSaveAMatFile [separatorForTheCSVFile = ","]
