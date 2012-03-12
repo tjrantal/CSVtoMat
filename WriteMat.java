@@ -1,4 +1,11 @@
 /*
+The software is licensed under a Creative Commons Attribution 3.0 Unported License.
+Copyright (C) 2012 Timo Rantalainen
+*/
+
+/*
+A class to convert a CSV-file to .mat file
+Mat file format obtained from  http://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf on 12th of march 2012
 javac WriteMat.java CSVReader.java
 java WriteMat
 */
@@ -45,7 +52,7 @@ public class WriteMat{
 		if (varNameLength%8 != 0){
 			varNameLength+=8-varName.length()%8;
 		}
-		byte[] fileData = new byte[8+8+2*4+8+2*4+8+varNameLength+8+data.length*8];// +16+8
+		byte[] fileData = new byte[8+8+2*4+8+2*4+8+varNameLength+8+data.length*8];
 		fileData = createData(fileData,data,varName);
 		try{
 			writer.write(fileData);

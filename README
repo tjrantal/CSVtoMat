@@ -4,6 +4,10 @@ I have used the converter successfully in producing an Octave readable .mat file
 The program is very picky and allows exactly one header line, no empty columns and only numbers
 on rows other than the first one.
 
+
+The software is licensed under a Creative Commons Attribution 3.0 Unported License.
+Copyright (C) 2012 Timo Rantalainen
+
 Compile:
 javac WriteMat.java CSVReader.java
 

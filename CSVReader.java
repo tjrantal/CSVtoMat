@@ -1,3 +1,13 @@
+/*
+The software is licensed under a Creative Commons Attribution 3.0 Unported License.
+Copyright (C) 2012 Timo Rantalainen
+*/
+/*CSV file reader.
+Reads first row as column headings into Vector columnHeadings
+Reads remaining data as columns into columns Vector Vector where the outermost
+vector is column and innermost is rows from the respective column
+*/
+
 import java.io.*;
 import java.util.*;
 public class CSVReader{
