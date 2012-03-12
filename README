@@ -1,0 +1,5 @@
+CSV to mat converter. Used with Octave, since dlmread was taking forever with a csv-file.
+Got the file format from here: http://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf
+It may well be that problem was actually in column heading name, which contained spaces and parentheses.
+Nevertheless, the converter produced octave readable .mat file.
+
