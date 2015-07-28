@@ -33,10 +33,27 @@ public class CSVReader{
 				st = new StringTokenizer(strLine, separator);
 				tokenNumber = 0;
 				while(st.hasMoreTokens()){
-					columns.get(tokenNumber).add(Double.valueOf(st.nextToken()));
+                                    String nextToken = st.nextToken();
+                                    try{
+                                        columns.get(tokenNumber).add(Double.valueOf(nextToken));
+                                    }catch(Exception e){
+                                    ///don't do anything otherwise
+                                    }
+					
 					++tokenNumber;
 				}
 			}
+			///trim the collumns
+			for(int i = 0; i < columnHeadings.size(); i++){
+                            if(columns.get(i).size() <= 1){
+                            System.out.println("removing column " + i + ", size is " + columns.get(i).size()); 
+                                columns.remove(i);
+                                columnHeadings.remove(i);
+                                ///since we removed this column we need to reinterpret
+                                i--;
+                            }
+			}
+			System.out.println(columns.size());
 			br.close();
 		} catch (Exception err){System.err.println("Error: "+err.getMessage());}
 	}
